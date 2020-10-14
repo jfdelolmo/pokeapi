@@ -71,3 +71,9 @@ Check the configuration to access:
 - JDBC URL: jdbc:h2:mem:pokedb
 - User name: admin
 - Password: admin
+
+----
+
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
+
+----
