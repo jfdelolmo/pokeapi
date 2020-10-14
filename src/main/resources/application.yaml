@@ -1,5 +1,15 @@
 spring:
-    datasource:
-      platform: h2
-      url: "jdbc:h2:mem:testdb:IGNORECASE=true;DATABASE_TO_UPPER=false"
-      driver-class-name: org.h2.Driver
+  datasource:
+    platform: h2
+    url: "jdbc:h2:mem:pokedb"
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: admin    
+  h2:
+    console:
+      enabled: true
+      path: /pokedb/console               
+      settings:
+        web-allow-others: true
+        trace: false
+        

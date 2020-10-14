@@ -2,11 +2,16 @@ plugins {
     id 'org.springframework.boot' version '2.3.4.RELEASE'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
+    id 'java-library'
 }
 
 group = 'com.alea.knowledge'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 configurations {
     compileOnly {
@@ -37,8 +42,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-bootJar {
-    enabled = false
 }

@@ -1,54 +1,73 @@
+TODOs:
+ - add gradle task to generate the docker image
+ - Review readme
+
 #POKEAPI 
 
-Spring Boot application project with gradle, docker, docker-compose and h2database
+Spring Boot application project with gradle, docker, docker-compose and h2database.
 
-Uses the client http://.... to access to the Pokemon Api
+Provides three end-points to retrieve the top 5 pokemons depending it's weight, height or based experienced.
 
-Provides the following end-points:
+It uses the [java/kotlin wrapper library](https://github.com/PokeAPI/pokekotlin "https://github.com/PokeAPI/pokekotlin") to access to the Pokemon Api.
 
 ##Build 
 To run the tests:
-```bash
+```
 ./gradlew test
 ```
 
 To build the entire project:
-```bash
+```
 ./gradlew build 
 ```
 
-# Docker instructions
-##Docker
-```bash
+##Docker instructions
+```
 docker build -t pokeapi .
 ```
 
-```bash
+```
 docker run -p 8080:8080 pokeapi
 ```
-##Docker-compose
-```bash
+##Docker-compose instructions
+```
 docker-compose up
 ```
 
-```bash
+```
 docker-compose stop
 ```
 
-## Examples
+## Usage
 
 Once the application is boot up:
 
-### topFiveHeaviest
-```bash
+### Postman Collection
+Import the src/test/resources/postman/pokeapi.json collection to Postman
+
+### Command line
+
+#### topFiveHeaviest
+```
 curl -X GET "http://localhost:8080/alea/pokeapi/top/five/red/heaviest" -H "accept: */*"
 ```
-### topFiveHighest
-```bash
+#### topFiveHighest
+```
 curl -X GET "http://localhost:8080/alea/pokeapi/top/five/red/highest" -H "accept: */*"
 ```
 
-### topFiveBaseExperienced
-```bash
+#### topFiveBaseExperienced
+```
 curl -X GET "http://localhost:8080/alea/pokeapi/top/five/red/experienced" -H "accept: */*"
 ```
+
+## Database console
+Access to the H2 database console: 
+```
+http://localhost:8080/pokedb/console
+```
+Check the configuration to access:
+
+- JDBC URL: jdbc:h2:mem:pokedb
+- User name: admin
+- Password: admin
