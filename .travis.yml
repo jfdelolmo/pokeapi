@@ -2,11 +2,10 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - ./gradlew clean build
-  - docker build -t pokeapi -f Dockerfile.travis .
-
 script:
+  - ./gradlew clean buildDockerImage
+
+after_script:
   - docker run pokeapi
 
 deploy:
