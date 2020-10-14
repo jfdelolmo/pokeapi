@@ -1,25 +1,25 @@
 language: java
 install: skip
 
-sudo: required
+root: required
 services:
   - docker
 before_script:
   - chmod +x gradlew
 script:
   - ./gradlew clean buildDockerImage
-
-#after_script:
-#  - docker run pokeapi
+  - docker run pokeapi
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "PokeapiApp"
   env: "Pokeapiapp-env"
-  bucket_name: "elasticbeanstalk-us-east-2-666098774221"
+  bucket: "elasticbeanstalk-us-east-2-666098774221"
   bucket_path: "PokeapiApp"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
+after_deploy:
+  -
