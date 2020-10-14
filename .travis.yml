@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jfdelolmo/pokeapi -f ./docker/Dockerfile .
+
+script:
+  - docker run jfdelolmo/pokeapi
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "frontend"
+  env: "Frontend-env"
+  bucket_name: "jfdelolmo.us-east-2.elasticbeanstalk.com/"
+  bucket_path: "pokeapi"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
