@@ -3,6 +3,7 @@ services:
   - docker
 
 before_install:
+  - gradle clean build
   - docker build -t pokeapi -f Dockerfile.travis .
 
 script:
