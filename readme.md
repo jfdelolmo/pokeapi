@@ -74,5 +74,5 @@ Check the configuration to access:
 - Password: admin
 
 ----
-
+[![Build Status](https://travis-ci.com/jfdelolmo/pokeapi.svg?branch=main)](https://travis-ci.com/jfdelolmo/pokeapi)
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)

@@ -10,7 +10,6 @@ ARG gid=1000
 RUN groupadd -g ${gid} ${group} && useradd -u ${uid} -g ${group} -s /bin/sh ${user}
 
 ## Define the application jar
-ARG JAR_FILE=../build/libs/*.jar
 #ARG JAR_FILE=./*.jar
 COPY ${JAR_FILE} app.jar
 

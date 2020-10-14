@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t pokeapi -f ./docker/Dockerfile.travis .
+  - docker build -t pokeapi -f Dockerfile.travis .
 
 script:
   - docker run pokeapi
