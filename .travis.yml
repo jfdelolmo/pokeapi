@@ -8,7 +8,7 @@ before_script:
   - chmod +x gradlew
 script:
   - ./gradlew clean buildDockerImage
-  - docker run pokeapi
+  - docker run pokeapi npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
