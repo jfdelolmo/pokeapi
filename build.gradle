@@ -5,8 +5,8 @@ plugins {
     id 'java-library'
 }
 
-group = 'com.alea.knowledge'
-version = '0.0.1-SNAPSHOT'
+group = "${group}"
+version = "${version}"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -43,3 +43,25 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+// DOCKER RELATED TASKS //
+task copyJarToDockerDir(type: Copy) {
+    from "$buildDir/libs"
+    include "**/*.jar"
+    into "$buildDir/docker"
+}
+
+task prepareDockerDir(type: Copy) {
+    from "$projectDir/docker"
+    include "Dockerfile"
+    into "$buildDir/docker"
+}
+
+task buildDockerImage(type:Exec) {
+    workingDir "$buildDir/docker"
+    commandLine "docker", "build", "-t", "${project.name}", "."
+}
+
+copyJarToDockerDir.dependsOn build
+buildDockerImage.dependsOn prepareDockerDir
+buildDockerImage.dependsOn copyJarToDockerDir

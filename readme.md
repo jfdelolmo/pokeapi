@@ -1,10 +1,9 @@
 TODOs:
- - add gradle task to generate the docker image
  - Review readme
 
 #POKEAPI 
 
-Spring Boot application project with gradle, docker, docker-compose and h2database.
+Spring Boot application project with gradle, docker, docker-compose, h2database, CircleCi.
 
 Provides three end-points to retrieve the top 5 pokemons depending it's weight, height or based experienced.
 
@@ -22,18 +21,20 @@ To build the entire project:
 ```
 
 ##Docker instructions
+To generate the image:
 ```
-docker build -t pokeapi .
-```
-
-```
-docker run -p 8080:8080 pokeapi
+./gradlew buildDockerImage
 ```
 ##Docker-compose instructions
+To run the dockerized application with docker-compose:
 ```
 docker-compose up
 ```
-
+To run in background:
+```
+docker-compose up -d
+```
+To stop the dockerized application with docker-compose:
 ```
 docker-compose stop
 ```
@@ -75,5 +76,3 @@ Check the configuration to access:
 ----
 
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
-
-----
