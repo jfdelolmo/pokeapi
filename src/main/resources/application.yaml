@@ -1,0 +1,5 @@
+spring:
+    datasource:
+      platform: h2
+      url: "jdbc:h2:mem:testdb:IGNORECASE=true;DATABASE_TO_UPPER=false"
+      driver-class-name: org.h2.Driver
