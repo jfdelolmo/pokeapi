@@ -15,10 +15,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "pokeapiapp"
+  app: "PokeapiApp"
   env: "Pokeapiapp-env"
   bucket_name: "elasticbeanstalk-us-east-2-666098774221"
-  bucket_path: "pokeapiapp"
+  bucket_path: "PokeapiApp"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
