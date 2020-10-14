@@ -8,7 +8,7 @@ before_script:
   - chmod +x gradlew
 script:
   - ./gradlew clean buildDockerImage
-  - docker run pokeapi npm run test --coverage
+#  - docker run pokeapi npm run test --coverage
 
 deploy:
   provider: elasticbeanstalk
@@ -21,5 +21,3 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-after_deploy:
-  -
