@@ -9,9 +9,9 @@ before_script:
   - chmod +x gradlew        
 script: 
   - ./gradlew clean build      
-  - docker build -t jfdelolmo/pokeapi . -f Dockerfile.travis
-  #  - docker login $DOCKER_HUB_ID $DOCKER_HUB_PWD
-  - docker login -u jfdelolmo -p babuchas
+  - docker build -t jfdelolmo/pokeapi . -f Dockerfile.travis  
+#  - docker login -u jfdelolmo -p babuchas
+  - echo "$DOCKER_HUB_PWD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
   - docker push jfdelolmo/pokeapi
 
 deploy:
