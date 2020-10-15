@@ -8,6 +8,7 @@ before_script:
   - chmod +x gradlew
 script:
   - ./gradlew clean buildDockerImage
+  - ./gradlew pushDockerImage
 
 deploy:
   provider: elasticbeanstalk
@@ -17,7 +18,7 @@ deploy:
   bucket: "elasticbeanstalk-us-east-2-666098774221"
   bucket_path: "PokeapiApp"
   on:
-  branch: master
+    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
 
