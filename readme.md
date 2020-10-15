@@ -71,7 +71,8 @@ dropdown in Postman.
 
 ### AWS deployment
 The application is deployed in AWS, so can be accessed on-line.
-####Using Command line
+
+#### Using Command line
 *topFiveHeaviest*
 ```
 curl -X GET "http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/alea/pokeapi/top/five/red/heaviest" -H "accept: */*"
@@ -88,6 +89,19 @@ curl -X GET "http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/a
 Import the src/test/resources/postman/Pokemon.postman_collection.json collection and the
 AWS.postman_environment.json environment, then can be selected as **AWS** from the environment 
 dropdown in Postman.
+
+#### Direct access to the end-points
+*topFiveHeaviest*
+
+http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/alea/pokeapi/top/five/red/heaviest
+
+*topFiveHighest*
+
+http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/alea/pokeapi/top/five/red/highest
+
+*topFiveBaseExperienced*
+
+http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/alea/pokeapi/top/five/red/experienced
 
 ## Database console
 Access to the H2 database console:
