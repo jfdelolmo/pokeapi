@@ -10,7 +10,6 @@ before_script:
 script: 
   - ./gradlew clean build      
   - docker build -t jfdelolmo/pokeapi . -f Dockerfile.travis  
-#  - docker login -u jfdelolmo -p babuchas
   - echo "$DOCKER_HUB_PWD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
   - docker push jfdelolmo/pokeapi
 
