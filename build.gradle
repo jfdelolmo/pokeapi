@@ -62,6 +62,12 @@ task buildDockerImage(type:Exec) {
     commandLine "docker", "build", "-t", "${project.name}", "."
 }
 
+task pushDockerImage(type: Exec) {
+    commandLine "docker", "tag", "${project.name}", "jfdelolmo/${project.name}"
+    commandLine "docker", "push", "jfdelolmo/${project.name}:${project.version}"
+}
+
 copyJarToDockerDir.dependsOn build
 buildDockerImage.dependsOn prepareDockerDir
 buildDockerImage.dependsOn copyJarToDockerDir
+pushDockerImage.dependsOn buildDockerImage
