@@ -1,4 +1,4 @@
-package com.alea.knowledge.pokeapi.domain;
+package com.alea.knowledge.pokeapi.model;
 
 import lombok.Data;
 

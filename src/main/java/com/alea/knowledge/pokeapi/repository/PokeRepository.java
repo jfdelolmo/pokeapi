@@ -1,6 +1,6 @@
 package com.alea.knowledge.pokeapi.repository;
 
-import com.alea.knowledge.pokeapi.domain.PokemonModel;
+import com.alea.knowledge.pokeapi.model.PokemonModel;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;

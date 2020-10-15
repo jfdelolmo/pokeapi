@@ -1,6 +1,6 @@
 package com.alea.knowledge.pokeapi.services.loader;
 
-import com.alea.knowledge.pokeapi.domain.PokemonModel;
+import com.alea.knowledge.pokeapi.model.PokemonModel;
 import com.alea.knowledge.pokeapi.repository.PokeRepository;
 import com.alea.knowledge.pokeapi.services.client.PokeApiClientService;
 import com.alea.knowledge.pokeapi.services.mapper.MapUtils;

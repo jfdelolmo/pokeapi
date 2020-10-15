@@ -1,7 +1,7 @@
 package com.alea.knowledge.pokeapi.services;
 
-import com.alea.knowledge.pokeapi.domain.FilterCriteriaEnum;
-import com.alea.knowledge.pokeapi.domain.PokemonModel;
+import com.alea.knowledge.pokeapi.model.FilterCriteriaEnum;
+import com.alea.knowledge.pokeapi.model.PokemonModel;
 import com.alea.knowledge.pokeapi.dto.CommonWrapper;
 import com.alea.knowledge.pokeapi.dto.PokemonInfoDto;
 import com.alea.knowledge.pokeapi.repository.PokeRepository;

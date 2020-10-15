@@ -1,7 +1,7 @@
 package com.alea.knowledge.pokeapi.services;
 
-import com.alea.knowledge.pokeapi.domain.FilterCriteriaEnum;
-import com.alea.knowledge.pokeapi.domain.PokemonModel;
+import com.alea.knowledge.pokeapi.model.FilterCriteriaEnum;
+import com.alea.knowledge.pokeapi.model.PokemonModel;
 import com.alea.knowledge.pokeapi.dto.CommonWrapper;
 import com.alea.knowledge.pokeapi.dto.PokemonInfoDto;
 import com.alea.knowledge.pokeapi.repository.PokeRepository;
@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.list;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

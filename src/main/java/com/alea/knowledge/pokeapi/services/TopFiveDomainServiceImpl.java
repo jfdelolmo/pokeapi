@@ -1,6 +1,6 @@
 package com.alea.knowledge.pokeapi.services;
 
-import com.alea.knowledge.pokeapi.domain.FilterCriteriaEnum;
+import com.alea.knowledge.pokeapi.model.FilterCriteriaEnum;
 import com.alea.knowledge.pokeapi.dto.CommonWrapper;
 import com.alea.knowledge.pokeapi.dto.PokemonInfoDto;
 import lombok.AllArgsConstructor;

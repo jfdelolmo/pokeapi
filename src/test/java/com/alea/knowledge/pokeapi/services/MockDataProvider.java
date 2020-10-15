@@ -1,6 +1,6 @@
 package com.alea.knowledge.pokeapi.services;
 
-import com.alea.knowledge.pokeapi.domain.PokemonModel;
+import com.alea.knowledge.pokeapi.model.PokemonModel;
 import com.alea.knowledge.pokeapi.services.mapper.MapUtils;
 
 import me.sargunvohra.lib.pokekotlin.model.NamedApiResource;
