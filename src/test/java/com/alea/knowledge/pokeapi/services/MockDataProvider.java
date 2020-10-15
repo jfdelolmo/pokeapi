@@ -1,6 +1,8 @@
 package com.alea.knowledge.pokeapi.services;
 
 import com.alea.knowledge.pokeapi.domain.PokemonModel;
+import com.alea.knowledge.pokeapi.services.mapper.MapUtils;
+
 import me.sargunvohra.lib.pokekotlin.model.NamedApiResource;
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import me.sargunvohra.lib.pokekotlin.model.PokemonSprites;
@@ -22,7 +24,7 @@ public class MockDataProvider {
     public static PokemonModel mockedPokemonModel(){
         PokemonModel model = new PokemonModel();
         model.setBaseExperience(MOCKED_BASE_EXPERIENCE);
-        model.setDetails(MapperServiceImpl.ORIGINAL_PREFIX + MOCKED_ID);
+        model.setDetails(MapUtils.ORIGINAL_PREFIX + MOCKED_ID);
         model.setHeight(MOCKED_HEIGHT);
         model.setId(MOCKED_INTERNAL_ID);
         model.setName(MOCKED_NAME);

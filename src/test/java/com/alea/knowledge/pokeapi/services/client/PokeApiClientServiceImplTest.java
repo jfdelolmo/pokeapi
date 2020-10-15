@@ -1,4 +1,4 @@
-package com.alea.knowledge.pokeapi.services;
+package com.alea.knowledge.pokeapi.services.client;
 
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import org.junit.jupiter.api.Test;
@@ -8,6 +8,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import com.alea.knowledge.pokeapi.services.client.PokeApiClientServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 class PokeApiClientServiceImplTest {

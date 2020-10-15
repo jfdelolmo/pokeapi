@@ -14,7 +14,7 @@ public class PokemonModel {
     @GeneratedValue
     private Long id;
 
-    String name;
+    private String name;
 
     private int weight;
     private int height;

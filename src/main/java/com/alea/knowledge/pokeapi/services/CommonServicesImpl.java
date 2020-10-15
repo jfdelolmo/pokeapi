@@ -5,11 +5,12 @@ import com.alea.knowledge.pokeapi.domain.PokemonModel;
 import com.alea.knowledge.pokeapi.dto.CommonWrapper;
 import com.alea.knowledge.pokeapi.dto.PokemonInfoDto;
 import com.alea.knowledge.pokeapi.repository.PokeRepository;
+import com.alea.knowledge.pokeapi.services.mapper.MapUtils;
+
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.AbstractMap;
 import java.util.Collections;
 import java.util.List;
@@ -51,7 +52,7 @@ public class CommonServicesImpl implements CommonServices {
         pokemonInfoDto.setPokemons(
                 fromRepository
                         .stream()
-                        .map(MapperServiceImpl::modelToDetailDto)
+                        .map(MapUtils::modelToDetailDto)
                         .collect(Collectors.toList())
         );
         return pokemonInfoDto;

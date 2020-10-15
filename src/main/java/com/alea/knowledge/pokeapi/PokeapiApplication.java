@@ -1,6 +1,6 @@
 package com.alea.knowledge.pokeapi;
 
-import com.alea.knowledge.pokeapi.services.PokemonDataLoader;
+import com.alea.knowledge.pokeapi.services.loader.PokemonDataLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

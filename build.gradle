@@ -52,7 +52,7 @@ task copyJarToDockerDir(type: Copy) {
 }
 
 task prepareDockerDir(type: Copy) {
-    from "$projectDir/docker"
+    from "$projectDir/gradle"
     include "Dockerfile"
     into "$buildDir/docker"
 }
@@ -62,12 +62,16 @@ task buildDockerImage(type:Exec) {
     commandLine "docker", "build", "--tag", "${project.name}:latest", "--tag", "${project.name}:${project.version}", "."
 }
 
+task tagForPush(type: Exec){
+    commandLine "docker", "tag", "${project.name}:${project.version}", "jfdelolmo/${project.name}:${project.version}"
+}
+
 task pushDockerImage(type: Exec) {
-    commandLine "docker", "tag", "jfdelolmo/${project.name}:${project.version}", "jfdelolmo/${project.name}:${project.version}"
     commandLine "docker", "push", "jfdelolmo/${project.name}:${project.version}"
 }
 
 copyJarToDockerDir.dependsOn build
 buildDockerImage.dependsOn prepareDockerDir
 buildDockerImage.dependsOn copyJarToDockerDir
+pushDockerImage.dependsOn tagForPush
 pushDockerImage.dependsOn buildDockerImage

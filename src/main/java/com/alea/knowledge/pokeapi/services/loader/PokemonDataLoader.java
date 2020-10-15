@@ -1,4 +1,4 @@
-package com.alea.knowledge.pokeapi.services;
+package com.alea.knowledge.pokeapi.services.loader;
 
 public interface PokemonDataLoader {
 

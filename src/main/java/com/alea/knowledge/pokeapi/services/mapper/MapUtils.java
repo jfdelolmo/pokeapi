@@ -1,10 +1,10 @@
-package com.alea.knowledge.pokeapi.services;
+package com.alea.knowledge.pokeapi.services.mapper;
 
 import com.alea.knowledge.pokeapi.domain.PokemonModel;
 import com.alea.knowledge.pokeapi.dto.PokemonDetailDto;
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 
-public class MapperServiceImpl {
+public class MapUtils {
 
     protected static final String ORIGINAL_PREFIX = "https://pokeapi.co/api/v2/pokemon/";
 

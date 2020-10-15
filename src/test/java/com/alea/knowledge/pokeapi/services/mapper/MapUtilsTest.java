@@ -1,22 +1,24 @@
-package com.alea.knowledge.pokeapi.services;
+package com.alea.knowledge.pokeapi.services.mapper;
 
 import com.alea.knowledge.pokeapi.domain.PokemonModel;
-import com.alea.knowledge.pokeapi.dto.PokemonDetailDto;
+import com.alea.knowledge.pokeapi.services.MockDataProvider;
+import com.alea.knowledge.pokeapi.services.mapper.MapUtils;
+
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class MapperServiceImplTest {
+class MapUtilsTest {
 
     @Test
     void pokemonToModel() {
         Pokemon mockedPokemon = MockDataProvider.mockedPokemon();
 
-        PokemonModel model = MapperServiceImpl.pokemonToModel(mockedPokemon);
+        PokemonModel model = MapUtils.pokemonToModel(mockedPokemon);
 
         assertThat(model.getBaseExperience()).isEqualTo(mockedPokemon.getBaseExperience());
-        assertThat(model.getDetails()).isEqualTo(MapperServiceImpl.ORIGINAL_PREFIX + mockedPokemon.getId());
+        assertThat(model.getDetails()).isEqualTo(MapUtils.ORIGINAL_PREFIX + mockedPokemon.getId());
         assertThat(model.getHeight()).isEqualTo(mockedPokemon.getHeight());
         assertThat(model.getName()).isEqualTo(mockedPokemon.getName());
         assertThat(model.getWeight()).isEqualTo(mockedPokemon.getWeight());

@@ -1,4 +1,4 @@
-package com.alea.knowledge.pokeapi.services;
+package com.alea.knowledge.pokeapi.services.client;
 
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
