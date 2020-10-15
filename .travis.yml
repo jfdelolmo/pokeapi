@@ -11,7 +11,7 @@ before_script:
 script:
   - docker build -t jfdelolmo/pokeapi . -f Dockerfile.travis
 #  - docker login $DOCKER_HUB_ID $DOCKER_HUB_PWD
-  - docker login jfdelolmo babuchas
+  - docker login -u jfdelolmo -p babuchas
   - docker push jfdelolmo/pokeapi
 #script:
 #  - ./gradlew clean buildDockerImage
