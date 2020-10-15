@@ -12,6 +12,13 @@ import java.util.List;
 @Repository
 public interface PokeRepository extends JpaRepository<PokemonModel, Long> {
 
+    /**
+     * Default method requesting for a page of 'top' elements sorted descending by the 'propertyName'
+     *
+     * @param top          Number of elements of the top
+     * @param propertyName Name of the property
+     * @return A list containing the request top elements
+     */
     default List<PokemonModel> findTop(Integer top, String propertyName) {
         List<PokemonModel> result = new ArrayList<>();
 
@@ -21,7 +28,6 @@ public interface PokeRepository extends JpaRepository<PokemonModel, Long> {
         page.forEach(result::add);
 
         return result;
-
     }
 
 }

@@ -9,8 +9,6 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.alea.knowledge.pokeapi.services.client.PokeApiClientServiceImpl;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 class PokeApiClientServiceImplTest {
 

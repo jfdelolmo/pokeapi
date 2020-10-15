@@ -2,7 +2,6 @@ package com.alea.knowledge.pokeapi.services.mapper;
 
 import com.alea.knowledge.pokeapi.model.PokemonModel;
 import com.alea.knowledge.pokeapi.services.MockDataProvider;
-
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import org.junit.jupiter.api.Test;
 

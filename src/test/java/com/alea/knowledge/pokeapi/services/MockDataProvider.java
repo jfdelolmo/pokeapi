@@ -1,11 +1,14 @@
 package com.alea.knowledge.pokeapi.services;
 
+import com.alea.knowledge.pokeapi.dto.CommonWrapper;
+import com.alea.knowledge.pokeapi.dto.PokemonDetailDto;
+import com.alea.knowledge.pokeapi.dto.PokemonInfoDto;
 import com.alea.knowledge.pokeapi.model.PokemonModel;
 import com.alea.knowledge.pokeapi.services.mapper.MapUtils;
-
 import me.sargunvohra.lib.pokekotlin.model.NamedApiResource;
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import me.sargunvohra.lib.pokekotlin.model.PokemonSprites;
+import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
 
@@ -21,7 +24,7 @@ public class MockDataProvider {
     public static final NamedApiResource MOCKED_SPECIES = initMockedSpecies();
     public static final PokemonSprites MOCKED_SPRITES = initMockedSprites();
 
-    public static PokemonModel mockedPokemonModel(){
+    public static PokemonModel mockedPokemonModel() {
         PokemonModel model = new PokemonModel();
         model.setBaseExperience(MOCKED_BASE_EXPERIENCE);
         model.setDetails(MapUtils.ORIGINAL_PREFIX + MOCKED_ID);
@@ -32,6 +35,7 @@ public class MockDataProvider {
         return model;
 
     }
+
     public static Pokemon mockedPokemon() {
         return new Pokemon(
                 MOCKED_ID,
@@ -66,6 +70,31 @@ public class MockDataProvider {
                 null,
                 null,
                 null);
+    }
+
+    public static CommonWrapper<PokemonInfoDto> initMockedWrapper(HttpStatus httpStatus) {
+        CommonWrapper<PokemonInfoDto> mockedWrapper = new CommonWrapper<>();
+        mockedWrapper.setHttpStatus(httpStatus);
+        mockedWrapper.setDto(mockedPokemonInfo(!HttpStatus.OK.equals(httpStatus)));
+        return mockedWrapper;
+    }
+
+    private static PokemonInfoDto mockedPokemonInfo(boolean hasError) {
+        PokemonInfoDto mockedWrapper = new PokemonInfoDto();
+        mockedWrapper.setError(hasError ? "This is a mocked error" : null);
+        mockedWrapper.setPokemons(new ArrayList<>());
+        mockedWrapper.getPokemons().add(mockedPokemonDetailDto());
+        return mockedWrapper;
+    }
+
+    private static PokemonDetailDto mockedPokemonDetailDto() {
+        PokemonDetailDto mockedPokemonDetailDto = new PokemonDetailDto();
+        mockedPokemonDetailDto.setWeight(1);
+        mockedPokemonDetailDto.setName("Pikachu");
+        mockedPokemonDetailDto.setHeight(2);
+        mockedPokemonDetailDto.setBaseExperience(3);
+        mockedPokemonDetailDto.setDetails("Mocked_details_url");
+        return mockedPokemonDetailDto;
     }
 
 }

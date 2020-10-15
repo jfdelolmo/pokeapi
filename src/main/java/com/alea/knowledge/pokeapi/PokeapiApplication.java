@@ -2,7 +2,6 @@ package com.alea.knowledge.pokeapi;
 
 import com.alea.knowledge.pokeapi.configuration.ActuatorAliasConfig;
 import com.alea.knowledge.pokeapi.services.loader.PokemonDataLoader;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -19,7 +18,7 @@ public class PokeapiApplication {
 
     private final PokemonDataLoader loader;
 
-    public PokeapiApplication(PokemonDataLoader loader){
+    public PokeapiApplication(PokemonDataLoader loader) {
         this.loader = loader;
     }
 

@@ -9,6 +9,6 @@ public class PokemonInfoDto {
 
     String error;
 
-    List<? extends PokemonDetailDto> pokemons;
+    List<PokemonDetailDto> pokemons;
 
 }

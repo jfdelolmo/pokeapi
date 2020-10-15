@@ -58,12 +58,12 @@ task prepareDockerDir(type: Copy) {
     into "$buildDir/docker"
 }
 
-task buildDockerImage(type:Exec) {
+task buildDockerImage(type: Exec) {
     workingDir "$buildDir/docker"
     commandLine "docker", "build", "--tag", "${project.name}:latest", "--tag", "${project.name}:${project.version}", "."
 }
 
-task tagForPush(type: Exec){
+task tagForPush(type: Exec) {
     commandLine "docker", "tag", "${project.name}:${project.version}", "jfdelolmo/${project.name}:${project.version}"
 }
 
