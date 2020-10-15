@@ -1,18 +1,18 @@
-#POKEAPI 
+# POKEAPI 
 
 This application provides three end-points to retrieve the top 5 pokemons of the RED generation,
  depending it's weight, height or based experienced.
 
 It uses the [java/kotlin wrapper library](https://github.com/PokeAPI/pokekotlin "https://github.com/PokeAPI/pokekotlin") to access to the Pokemon Api.
 
-##Technology stack
+## Technology stack
 - Spring Boot application
 - H2 database
 - Gradle build tool
 - Docker & docker-compose
 - Travis for continuous integration and AWS deployment
 
-##Gradle tasks
+## Gradle tasks
 To run the tests:
 ```
 ./gradlew test
@@ -33,7 +33,7 @@ To push the image to DockerHub:
 ./gradlew pushDockerImage
 ```
 
-##Docker-compose instructions
+## Docker-compose instructions
 To run the dockerized application with docker-compose:
 ```
 docker-compose up
@@ -47,11 +47,11 @@ To stop the dockerized application with docker-compose:
 docker-compose stop
 ```
 
-##How to try the application
-###Local deployment
+## How to try the application
+### Local deployment
 Boot up the application and access to the provided end-points.
 
-####Using Command line
+#### Using Command line
 *topFiveHeaviest*
 ```
 curl -X GET "http://localhost:8080/alea/pokeapi/top/five/red/heaviest" -H "accept: */*"
@@ -64,12 +64,12 @@ curl -X GET "http://localhost:8080/alea/pokeapi/top/five/red/highest" -H "accept
 ```
 curl -X GET "http://localhost:8080/alea/pokeapi/top/five/red/experienced" -H "accept: */*"
 ```
-####Postman Collection
+#### Postman Collection
 Import the src/test/resources/postman/Pokemon.postman_collection.json collection and the
 Local.postman_environment.json environment, then can be selected as **Local** from the environment 
 dropdown in Postman.
 
-###AWS deployment
+### AWS deployment
 The application is deployed in AWS, so can be accessed on-line.
 ####Using Command line
 *topFiveHeaviest*
@@ -84,7 +84,7 @@ curl -X GET "http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/a
 ```
 curl -X GET "http://pokeapiapp-env.eba-zu3w26k9.us-east-2.elasticbeanstalk.com/alea/pokeapi/top/five/red/experienced" -H "accept: */*"
 ```
-####Postman Collection
+#### Postman Collection
 Import the src/test/resources/postman/Pokemon.postman_collection.json collection and the
 AWS.postman_environment.json environment, then can be selected as **AWS** from the environment 
 dropdown in Postman.
