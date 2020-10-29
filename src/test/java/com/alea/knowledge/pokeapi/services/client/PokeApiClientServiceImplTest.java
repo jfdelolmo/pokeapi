@@ -9,7 +9,6 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 class PokeApiClientServiceImplTest {
 
     PokeApiClientServiceImpl service = new PokeApiClientServiceImpl();
