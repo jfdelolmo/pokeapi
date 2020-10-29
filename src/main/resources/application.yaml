@@ -12,3 +12,12 @@ spring:
       settings:
         web-allow-others: true
         trace: false
+
+# custom actuator base path: use root mapping `/` instead of default `/health/`
+# override endpoint name for health check: `/health` => `/ping`
+management:
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        health: /ping
