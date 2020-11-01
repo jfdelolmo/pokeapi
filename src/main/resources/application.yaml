@@ -12,6 +12,11 @@ spring:
       settings:
         web-allow-others: true
         trace: false
+  main:
+    banner-mode: console
+  banner:
+    location: banner.txt
+
 
 # custom actuator base path: use root mapping `/` instead of default `/health/`
 # override endpoint name for health check: `/health` => `/ping`
